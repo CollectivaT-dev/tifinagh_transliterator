@@ -13,37 +13,43 @@ After, create a virtualenvironment and install all the requirements
 python -m venv venv
 source venv/bin/activate
 python -m pip install -U pip
-python -m pip install -r requirements.txt
 ```
 
 # Usage
 
 ```
-usage:  transliterator Latin <> Tifinag [-h] -d LAD_DIC [-i INPUT]
-                                                   [-o OUTPUT] [-v] [-c]
-required arguments:
+usage: transliterator Latin <> Tifinag [-h] [-t TEXT] [-v] [-d DIRECTION] [-i INPUT] [-o OUTPUT]
 
-  -h, --help            show help message and exit
-
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TEXT, --text TEXT  Source language.
+  -v, --interactive     Interactive translator
+  -d DIRECTION, --direction DIRECTION
+                        1 for latin to tifinagh, 2 for tifinagh to latin
   -i INPUT, --input INPUT
-                        Sentence segmented text file to transliterate
+                        Only transliterator Latin to Tifinag
   -o OUTPUT, --output OUTPUT
                         Output path
-  -v, --interactive     Interactive transliterator
 ```
 
 ## Interactive mode
 
-This mode opens an interactive panel where given sentence is translated. 
+This mode opens an interactive panel where given sentence is transliterated. By default it transliterates from latin to tifinagh.
 
 ```
-python main.py -v
+python src/main.py -v
+```
+
+For transliterating tifinagh to latin specify direction as 2.
+
+```
+python src/main.py -v -d 2
 ```
 
 ## Translate sentence-segmented text file
 
-This mode translates plain text file, line-by-line.
+This mode transliterates plain text file, line-by-line.
 
 ```
-python main.py -i text.txt -o resultado/resultado.txt
+python src/main.py -i test.txt -o test-result.txt
 ```

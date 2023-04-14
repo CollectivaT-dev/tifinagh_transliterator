@@ -28,6 +28,6 @@ first_test = [("aman", "ⴰⵎⴰⵏ"),
 				  ("ɣanim", "ⵖⴰⵏⵉⵎ"),]
 
 @pytest.mark.parametrize(('x', 'y'), first_test)
-def test_vosotros(x, y):
+def test(x, y):
     pytest.assume(trans(x) == y)
 
