@@ -36,7 +36,8 @@ dict_lat_to_tifinagh = {
 	'i': 'ⵉ',
 	'u': 'ⵓ',
 	'p': 'ⵒ',
-	'v': 'ⵠ'
+	'v': 'ⵠ',
+	'ẓ̌': 'ⵋ'
 }
 
 dict_tifinagh_to_lat = dict((v, k) for k, v in dict_lat_to_tifinagh.items())
